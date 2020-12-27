@@ -1,0 +1,48 @@
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Client</h1>
+     
+        <div class="card mb-4">
+            
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Image</th>
+                                <th>Review</th>
+                                <th>Action</th>
+                                
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                              {{#each allclient}}
+                                  <tr>
+                                    <td>{{this.username}}</td>
+                                    <td>{{this.email}}</td>
+
+                                    {{#if this.profileimage}}
+                                   <td><img src="../myprofile_images/{{this.profileimage}}" style="width:150px;height:150px;border-radius:75px"/></td>
+                                    {{else}}
+                                    <td>NA</td>
+                                    {{/if}}
+                                    {{#if this.tot_post}}
+                                   <td><a href="/admin/review/{{this.id}}">{{this.tot_post}}</a></td>
+                                    {{else}}
+                                    <td>{{this.tot_post}}</td>
+                                    {{/if}}
+                                   
+                                    <td><a href="/admin/editclient/{{this.id}}">Edit</a>||<a href="/admin/deleteclient/{{this.id}}">Delete</a></td>
+                                  </tr>
+                              {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

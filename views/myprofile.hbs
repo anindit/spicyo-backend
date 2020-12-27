@@ -1,0 +1,33 @@
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">My Profile</h1>
+     
+        <div class="card mb-4">
+            
+          <div class="card-body">
+            <form method="post" action="/admin/myprofile" enctype="multipart/form-data">
+                <input type="hidden" name="userid" value={{userdetails.id}} />
+                <input type="hidden" name="previmage" value={{userdetails.profileimage}} />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" name="email" class="form-control" value={{userdetails.email}}  placeholder="Enter email" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Profile Picture</label>
+                  <div>
+                    {{#if userdetails.profileimage}}
+                      <img src="../myprofile_images/{{userdetails.profileimage}}" style="width:150px;height:150px;border-radius:75px"/>
+                    {{/if}}
+                    <input type="file" name="myImage"  />
+                  </div>
+                </div>
+              
+                <button  class="btn btn-primary">Submit</button>
+              </form>
+              {{#if message}}
+              <div class="alert alert-danger mt-4">{{message}}</div>
+              {{/if}}
+          </div>
+        </div>
+    </div>
+</main>

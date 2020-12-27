@@ -1,0 +1,33 @@
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Subscription</h1>
+     
+        <div class="card mb-4">
+            
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Email</th>                                
+                                <th>Subscribed On</th>
+                                
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                              {{#each allrequest}}
+                                  <tr>
+                                    <td>{{this.subsemail}}</td>                                   
+                                    <td>{{this.createdon}}</td>
+                                   
+                                  </tr>
+                              {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

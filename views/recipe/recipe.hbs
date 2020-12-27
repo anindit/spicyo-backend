@@ -1,0 +1,42 @@
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Recipe</h1>
+     
+        <div class="card mb-4">
+            
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Recipe Name</th>
+                                <th>Price</th>
+                                <th>Image</th>
+                                <th>Action</th>
+                                
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                              {{#each allrecipes}}
+                                  <tr>
+                                    <td>{{this.recipyname}}</td>
+                                    <td>$ {{this.price}}</td>
+
+                                    {{#if this.image}}
+                                   <td><img src="../recipe_images/{{this.image}}" style="width:150px;height:150px;border-radius:75px"/></td>
+                                    {{else}}
+                                    <td>NA</td>
+                                    {{/if}}
+                                   
+                                    <td><a href="/admin/editrecipe/{{this.id}}">Edit</a>||<a href="/admin/deleterecipe/{{this.id}}">Delete</a></td>
+                                  </tr>
+                              {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

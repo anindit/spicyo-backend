@@ -1,0 +1,30 @@
+<main>
+  <div class="container-fluid">
+    <h1 class="mt-4">{{btitle}}</h1>
+    <div class="card mb-4">
+      
+      {{#if reviewdetails}}
+      <div class="card-body">
+        <form method="post" action="/admin/addreview">
+            <input type="hidden" name="reviewid" value={{reviewdetails.id}} />
+            <div class="form-group">
+              <label for="exampleInputEmail1">Description</label>
+              <textarea rows="10" class="form-control"  placeholder="Description" name="desc">{{reviewdetails.description}}</textarea>
+            </div>
+            
+          
+            <button  class="btn btn-primary">Update</button>
+          </form>
+      </div>
+        {{else}}
+        <div class="card-body">
+       
+        </div>
+        {{/if}}
+
+        {{#if message}}
+                      <div class="alert alert-danger mt-4">{{message}}</div>
+                      {{/if}}
+    </div>
+  </div>
+</main>

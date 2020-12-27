@@ -1,0 +1,42 @@
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Banner</h1>
+     
+        <div class="card mb-4">
+            
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Image</th>
+                                <th>Action</th>
+                                
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                              {{#each allbanners}}
+                                  <tr>
+                                    <td>{{this.title}}</td>
+                                    <td>{{this.description}}</td>
+
+                                    {{#if this.banimage}}
+                                   <td><img src="../banner_images/{{this.banimage}}" style="width:150px;height:150px;border-radius:75px"/></td>
+                                    {{else}}
+                                    <td>NA</td>
+                                    {{/if}}
+                                   
+                                    <td><a href="/admin/editbanner/{{this.id}}">Edit</a>||<a href="/admin/deletebanner/{{this.id}}">Delete</a></td>
+                                  </tr>
+                              {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
