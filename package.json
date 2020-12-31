@@ -23,8 +23,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start" : "node server.js",
-    "devStart" : "nodemon server.js"
+    "start" : "node index.js",
+    "devStart" : "nodemon index.js"
   },
   "author": "",
   "license": "ISC"
