@@ -41,6 +41,6 @@ app.use('/admin/users/', require('./routes/admin/users'));
 /**admin section end */
 
 console.log('00000')
-app.listen(port, () => {
+app.listen(process.env.PORT||PORT, () => {
   console.log(`Example app listenings at http://localhost:${port}`)
 })
