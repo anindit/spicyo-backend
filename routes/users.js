@@ -1,5 +1,5 @@
 const router = require('express').Router();
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 const jwt = require("jsonwebtoken");
 var session = require('express-session');
 require("dotenv").config();

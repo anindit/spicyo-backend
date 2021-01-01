@@ -1,5 +1,5 @@
 const sqlcon = require("../db.js");
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 const jwt = require("jsonwebtoken");
 //const multer = require("multer");
 const path = require("path");
