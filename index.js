@@ -17,7 +17,7 @@ app.use(session({
 app.locals.moment = require('moment');
 
 
-const port = 3900;
+const port = 390;
 const path=require('path');
 app.use(express.static(path.join(__dirname,'public')));
 app.set('views', path.join(__dirname, 'views'));
